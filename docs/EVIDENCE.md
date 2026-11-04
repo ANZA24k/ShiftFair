@@ -1,5 +1,9 @@
 # Evidence and release gates
 
+Public website published and opened successfully on 2026-11-04: https://shiftfair.mohamedansaf222.chatgpt.site/
+
+The website is public and displays the pending contract status. This verifies hosting, not on-chain integration.
+
 Verified locally on 2026-11-04:
 
 | Check | Result | Scope |

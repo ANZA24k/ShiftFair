@@ -4,6 +4,8 @@
 
 > **Release status: implementation and local checks complete; live deployment blocked pending user handoff.** No deployed contract address or verified on-chain transaction is claimed. The website clearly displays “Awaiting deployment.” Do not submit to Project Explorer until the live checklist in [DEPLOYMENT.md](docs/DEPLOYMENT.md) is complete.
 
+Public dashboard: https://shiftfair.mohamedansaf222.chatgpt.site/ (deployment connection pending).
+
 ## The trust problem
 
 Shift exchanges often depend on private spreadsheets and discretionary explanations. Employees cannot verify which policy was applied, whether both people consented, or whether a manager changed the schedule after approving a competing request. ShiftFair commits the actual policy and roster, applies immutable constraints, records each employee's consent, and preserves the decision trail.

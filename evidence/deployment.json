@@ -1,0 +1,14 @@
+{
+  "website": "https://shiftfair.mohamedansaf222.chatgpt.site/",
+  "site_status": "succeeded",
+  "site_source_commit": "307303c3625e74f938b030d90b097a1088fd4acb",
+  "network": "Studionet",
+  "chain_id": 61999,
+  "contract_address": null,
+  "contract_source_sha256": "695fb25cdb2f65dc3a599bf3ae18d1a503004ff5c106d91d6381b2a8bd81e7e2",
+  "transactions": [],
+  "deployment_status": "BLOCKED_USER_HANDOFF_REQUIRED",
+  "reason": "Automatic approval review rejected Studio Deploy click before submission; no workaround attempted.",
+  "verified_contract_tests": 28,
+  "verified_frontend_tests": 12
+}

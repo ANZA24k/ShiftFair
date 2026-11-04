@@ -13,7 +13,7 @@ ShiftFair makes employee shift exchanges auditable. A manager commits an immutab
 Required evidence to fill only after verification:
 
 - GitHub: https://github.com/ANZA24k/ShiftFair
-- Public website: record successful Sites deployment URL.
+- Public website: https://shiftfair.mohamedansaf222.chatgpt.site/ (contract deployment pending).
 - GenLayer explorer contract: pending; never invent an address/URL.
 - Deployment transaction: pending.
 - Successful semantic verification, consent and approval transactions: pending.
