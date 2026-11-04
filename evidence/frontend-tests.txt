@@ -1,0 +1,25 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> shiftfair@1.0.0 test
+> node --test tests/*.test.mjs
+
+✔ finalization alone never claims execution success (1.318202ms)
+✔ accepted is provisional (0.154398ms)
+✔ CANCELED (0.244902ms)
+✔ UNDETERMINED (0.149471ms)
+✔ LEADER_TIMEOUT (0.113758ms)
+✔ VALIDATORS_TIMEOUT (0.1147ms)
+✔ pending transaction resumes without resubmission (0.994211ms)
+✔ timeout preserves pending state (0.31086ms)
+✔ network errors surface (0.745894ms)
+✔ nested canonical hash matches Python ensure_ascii (7.917001ms)
+✔ reject malformed account addresses (0.395034ms)
+✔ canonical SHA-256 matches independent Python golden vector (1.719897ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 113.411885

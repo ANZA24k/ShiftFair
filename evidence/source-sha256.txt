@@ -1,0 +1,1 @@
+695fb25cdb2f65dc3a599bf3ae18d1a503004ff5c106d91d6381b2a8bd81e7e2  contracts/shift_fair.py

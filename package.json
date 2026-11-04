@@ -1,0 +1,1 @@
+{"name":"shiftfair","version":"1.0.0","private":true,"type":"module","scripts":{"build":"vite build","test":"node --test tests/*.test.mjs"},"dependencies":{"genlayer-js":"1.1.8","vite":"6.4.1"}}

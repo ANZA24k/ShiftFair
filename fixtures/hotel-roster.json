@@ -1,0 +1,42 @@
+{
+  "window_start": 29895840,
+  "window_end": 29939040,
+  "policy": {
+    "text": "Employees may exchange shifts if both consent and the replacement is qualified. Personal preference is permitted. No other exceptions apply.",
+    "max_7d_minutes": 2400,
+    "min_rest_minutes": 660,
+    "max_shift_minutes": 720
+  },
+  "employees": [
+    {
+      "id": "EMP-A",
+      "wallet": "0x1111111111111111111111111111111111111111",
+      "roles": [
+        "front-desk"
+      ]
+    },
+    {
+      "id": "EMP-B",
+      "wallet": "0x2222222222222222222222222222222222222222",
+      "roles": [
+        "front-desk"
+      ]
+    }
+  ],
+  "shifts": [
+    {
+      "id": "DESK-01",
+      "employee": "EMP-A",
+      "start": 29912160,
+      "end": 29912640,
+      "role": "front-desk"
+    },
+    {
+      "id": "DESK-02",
+      "employee": "EMP-B",
+      "start": 29913600,
+      "end": 29914080,
+      "role": "front-desk"
+    }
+  ]
+}

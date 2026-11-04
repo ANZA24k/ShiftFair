@@ -1,0 +1,9 @@
+node_modules/
+dist/
+__pycache__/
+.pytest_cache/
+artifacts/
+.env*
+!.env.example
+*.tar.gz
+.openai/sites-state.json

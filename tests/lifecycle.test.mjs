@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {webcrypto} from 'node:crypto';
+import {stage,track,address,pythonCanonical,digest} from '../web/lifecycle.js';
+globalThis.crypto??=webcrypto;
+const tx=(status,result)=>({statusName:status,consensus_data:{leader_receipt:{execution_result:result}}});
+test('finalization alone never claims execution success',()=>{assert.equal(stage(tx('FINALIZED',undefined)),'unverified');assert.equal(stage(tx('FINALIZED','ERROR')),'failed');assert.equal(stage(tx('FINALIZED','SUCCESS')),'success');});
+test('accepted is provisional',()=>assert.equal(stage(tx('ACCEPTED','SUCCESS')),'pending'));
+for(const s of ['CANCELED','UNDETERMINED','LEADER_TIMEOUT','VALIDATORS_TIMEOUT'])test(s,()=>assert.equal(stage(tx(s)),'failed'));
+test('pending transaction resumes without resubmission',async()=>{let i=0;const states=[];const client={getTransaction:async()=>i++?tx('FINALIZED','SUCCESS'):tx('PENDING')};const r=await track(client,'hash',x=>states.push(x.state),{delay:0,sleep:async()=>{}});assert.deepEqual(states,['pending','success']);assert.equal(r.state,'success');});
+test('timeout preserves pending state',async()=>assert.equal((await track({getTransaction:async()=>tx('PENDING')},'x',()=>{},{attempts:1,sleep:async()=>{}})).state,'timeout'));
+test('network errors surface',async()=>assert.rejects(track({getTransaction:async()=>{throw Error('offline')}},'x',()=>{}),/offline/));
+test('nested canonical hash matches Python ensure_ascii',async()=>{assert.equal(pythonCanonical({z:'é',a:[{b:true,a:1}]}),'{"a":[{"a":1,"b":true}],"z":"\\u00e9"}');assert.equal((await digest({})).length,64);});
+test('reject malformed account addresses',()=>{for(const v of ['','0x123','<script>'])assert.throws(()=>address(v));assert.equal(address('0x'+'a'.repeat(40)),'0x'+'a'.repeat(40));});
+test('canonical SHA-256 matches independent Python golden vector',async()=>{const {readFileSync}=await import('node:fs');const golden=JSON.parse(readFileSync(new URL('../fixtures/canonical-golden.json',import.meta.url)));assert.equal(pythonCanonical(golden.value),golden.canonical);assert.equal(await digest(golden.value),golden.sha256);});
